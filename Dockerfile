@@ -10,3 +10,8 @@ COPY . /usr/share/nginx/html
 # Expose port 80 (optional, useful for clarity/documentation)
 EXPOSE 80
 
+# Use a lightweight web server
+FROM httpd:2.4
+
+# Copy site content into Apache's root directory
+COPY . /usr/local/apache2/htdocs/
